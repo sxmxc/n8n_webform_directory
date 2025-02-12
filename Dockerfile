@@ -10,11 +10,12 @@ COPY package*.json ./
 # Install dependencies
 RUN npm install
 
-# Copy project files
+# Copy project files (excluding .env)
 COPY . .
 
-# Copy .env file
-COPY .env .
+# Build arg for environment variables
+ARG VITE_N8N_WEBHOOK_URL
+ENV VITE_N8N_WEBHOOK_URL=$VITE_N8N_WEBHOOK_URL
 
 # Build the project
 RUN npm run build
@@ -24,9 +25,6 @@ FROM nginx:alpine
 
 # Copy built assets from build stage
 COPY --from=build /app/dist /usr/share/nginx/html
-
-# Copy nginx configuration if you have any
-# COPY nginx.conf /etc/nginx/conf.d/default.conf
 
 # Expose port
 EXPOSE 80

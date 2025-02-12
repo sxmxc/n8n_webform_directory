@@ -16,11 +16,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
       
-      - name: Create .env file
-        run: |
-          echo "VITE_N8N_WEBHOOK_URL=${{ secrets.VITE_N8N_WEBHOOK_URL }}" >> .env
-          # Add any other environment variables you need
-      
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
       
