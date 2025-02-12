@@ -1,5 +1,7 @@
 # Vue Form Dashboard
 
+[![Docker Build](https://github.com/sxmxc/n8n_webform_directory/actions/workflows/image-build.yml/badge.svg)](https://github.com/sxmxc/n8n_webform_directory/actions/workflows/image-build.yml)
+
 A simple **Vue 3 + Vuetify** dashboard that dynamically fetches and displays form links from an **n8n webhook**.
 
 ## Features
@@ -20,8 +22,8 @@ A simple **Vue 3 + Vuetify** dashboard that dynamically fetches and displays for
 ### 1️⃣ Clone the repository
 
 ```sh
-git clone https://github.com/your-username/vue-form-dashboard.git
-cd vue-form-dashboard
+git clone https://github.com/sxmxc/n8n_webform_directory.git
+cd n8n_webform_directory
 ```
 
 ### 2️⃣ Install dependencies
@@ -62,13 +64,13 @@ Your app should now be accessible at http://localhost:5173.
 ### 1️⃣ Build the Docker image
 
 ```sh
-docker build -t vue-form-dashboard .
+docker build -t n8n_webform_directory .
 ```
 
 ### 2️⃣ Run the container
 
 ```sh
-docker run -d -p 8080:80 --name form-dashboard vue-form-dashboard
+docker run -d -p 8080:80 --name form-dashboard n8n_webform_directory
 ```
 
 Now, visit http://localhost:8080 in your browser! 🚀
@@ -76,7 +78,7 @@ Now, visit http://localhost:8080 in your browser! 🚀
 ## 📂 Project Structure
 
 ```sh
-📦 vue-form-dashboard
+📦 n8n_webform_directory
 ├── 📂 src
 │   ├── 📂 components    # Vue components
 │   ├── 📂 views         # Page views

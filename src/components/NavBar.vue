@@ -33,7 +33,7 @@ const navigationItems = [
 			<v-app-bar-nav-icon @click="drawer = !drawer"></v-app-bar-nav-icon>
 		</template>
 
-		<v-app-bar-title>📋 Form Directory</v-app-bar-title>
+		<v-app-bar-title>Voidmoose Dashboard</v-app-bar-title>
 		<v-spacer></v-spacer>
 		<v-btn icon>
 			<v-icon>mdi-bell</v-icon>

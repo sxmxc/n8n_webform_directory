@@ -33,7 +33,7 @@ onMounted(fetchForms);
 		</v-row>
 		<v-row class="text-h5 text-center">
 			<v-col cols="12">
-				<div>Forms</div>
+				<div>📋 Forms</div>
 			</v-col>	
 		</v-row>
 		<v-row v-if="loading">
