@@ -11,6 +11,9 @@ RUN npm install
 # Copy the rest of the application
 COPY . .
 
+# Copy .env file
+COPY .env .
+
 # Build the Vue app
 RUN npm run build
 

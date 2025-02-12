@@ -16,6 +16,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
       
+      - name: Create .env file
+        run: |
+          echo "VITE_N8N_WEBHOOK_URL=${{ secrets.VITE_N8N_WEBHOOK_URL }}" >> .env
+          # Add any other environment variables you need
+      
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v3
       
@@ -27,9 +32,11 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+
       - name: Set outputs
         id: vars
         run: echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+
       - name: Build and push Docker image
         uses: docker/build-push-action@v5
         with:
@@ -42,3 +49,5 @@ jobs:
             ${{ secrets.DOCKERHUB_USERNAME }}/${{ github.event.repository.name }}:${{ steps.vars.outputs.sha_short }}
           cache-from: type=gha
           cache-to: type=gha,mode=max
+          build-args: |
+            VITE_N8N_WEBHOOK_URL=${{ secrets.VITE_N8N_WEBHOOK_URL }}

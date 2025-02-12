@@ -26,7 +26,7 @@ onMounted(fetchForms);
 	<v-container fluid>
 		<v-row v-if="error">
 			<v-col cols="12">
-				<v-alert type="error" outlined text="true">
+				<v-alert type="error" outlined>
 					{{ error }}
 				</v-alert>
 			</v-col>
