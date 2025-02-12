@@ -1,6 +1,7 @@
 import { createApp } from 'vue'
 import './style.css'
 import App from './App.vue'
+import router from './router'
 import { createVuetify } from "vuetify";
 import "vuetify/styles"; // Import Vuetify styles
 import * as components from "vuetify/components"; // Import Vuetify components
@@ -28,7 +29,7 @@ const voidDarkTheme = {
 };
 
 const vuetify = createVuetify({
-	blueprint: md3,
+	// blueprint: md3,
 	components,
 	directives,
 	theme: {
@@ -45,5 +46,6 @@ const vuetify = createVuetify({
 });
 
 const app = createApp(App);
+app.use(router);
 app.use(vuetify);
 app.mount('#app')

@@ -1,5 +1,5 @@
 <script setup>
-import FormDashboard from "./components/FormDashboard.vue";
+import FormDashboard from "./views/Forms.vue";
 import NavBar from "./components/NavBar.vue";
 import { useTheme } from "vuetify";
 import { ref } from "vue";
@@ -27,7 +27,7 @@ const toggleTheme = () => {
       </v-system-bar>
       <NavBar />
       <v-main>
-        <FormDashboard />
+        <router-view></router-view>
       </v-main>
       		<!-- Floating Theme Switcher -->
 		  <v-btn class="theme-switcher" icon @click="toggleTheme" color="primary">
