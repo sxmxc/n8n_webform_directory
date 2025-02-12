@@ -45,7 +45,7 @@ onMounted(fetchForms);
 		
 		<v-row v-else-if="forms.length === 0">
 			<v-col cols="12">
-				<v-alert value="true" type="info" outlined text="true">
+				<v-alert type="info" outlined>
 					No forms found. Please check back later.
 				</v-alert>
 			</v-col>
