@@ -17,6 +17,8 @@ COPY . .
 ARG VITE_N8N_WEBHOOK_URL
 ENV VITE_N8N_WEBHOOK_URL=$VITE_N8N_WEBHOOK_URL
 
+RUN echo "Build-time variable: $VITE_N8N_WEBHOOK_URL"
+
 # Build the project
 RUN npm run build
 

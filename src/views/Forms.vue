@@ -7,6 +7,7 @@ const loading = ref(true);
 
 const fetchForms = async () => {
 	try {
+		console.log("Fetching forms with URL:", API_URL);
 		const response = await fetch(API_URL);
 		const json = await response.json();
 		forms.value = json.data.map((form) => ({

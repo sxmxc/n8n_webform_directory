@@ -70,7 +70,7 @@ docker build -t n8n_webform_directory .
 ### 2️⃣ Run the container
 
 ```sh
-docker run -d -p 8080:80 --name form-dashboard n8n_webform_directory
+docker run -d -p 8080:80 --name form-dashboard --env-file=.env n8n_webform_directory
 ```
 
 Now, visit http://localhost:8080 in your browser! 🚀
