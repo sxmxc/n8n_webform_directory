@@ -14,8 +14,8 @@ const toggleTheme = () => {
 
 </script>
 <template>
-  <v-responsive class="border rounded">
-    <v-app :theme='theme.global.name.value'>
+  <v-responsive class="border rounded full-height">
+    <v-app :theme='theme.global.name.value' class="-webkit-fill-available">
       <v-system-bar :theme='isDark ? "dark" : "light"'>
         <v-spacer></v-spacer>
 
@@ -57,5 +57,13 @@ const toggleTheme = () => {
 	bottom: 20px;
 	right: 20px;
 	box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+.full-height {
+  height: 100vh;
+  width: 100vw;
+}
+
+.v-responsive {
+  height: 100%;
 }
 </style>
