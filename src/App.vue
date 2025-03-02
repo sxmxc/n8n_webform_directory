@@ -15,7 +15,7 @@ const toggleTheme = () => {
 </script>
 <template>
   <v-responsive class="border rounded full-height">
-    <v-app :theme='theme.global.name.value' class="-webkit-fill-available">
+    <v-app :theme='theme.global.name.value'>
       <v-system-bar :theme='isDark ? "dark" : "light"'>
         <v-spacer></v-spacer>
 
@@ -65,5 +65,8 @@ const toggleTheme = () => {
 
 .v-responsive {
   height: 100%;
+}
+#app {
+  width: -webkit-fill-available !important;
 }
 </style>
